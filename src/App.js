@@ -1,12 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+
+import LandingPage from "./pages/landingpage";
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <h2 className='text-white bg-transparent border-b-2'>Relief Help</h2>
-      </div>
+      <LandingPage />
     </div>
   );
 }
