@@ -3,7 +3,7 @@ import LandingPage from "./pages/landingpage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-body">
       <LandingPage />
     </div>
   );
