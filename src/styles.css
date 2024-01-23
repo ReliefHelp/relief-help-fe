@@ -13854,26 +13854,122 @@ video {
   --tw-backdrop-sepia: 
 }
 
-.mx-36{
-  margin-left:9rem;
-  margin-right:9rem
+.absolute{
+  position:absolute
 }
 
-.me-2{
-  margin-inline-end:0.5rem
+.relative{
+  position:relative
+}
+
+.left-0{
+  left:0px
+}
+
+.right-0{
+  right:0px
+}
+
+.top-full{
+  top:100%
+}
+
+.mx-auto{
+  margin-left:auto;
+  margin-right:auto
+}
+
+.my-auto{
+  margin-top:auto;
+  margin-bottom:auto
+}
+
+.mb-2{
+  margin-bottom:0.5rem
+}
+
+.mt-4{
+  margin-top:1rem
+}
+
+.mt-0{
+  margin-top:0px
+}
+
+.block{
+  display:block
+}
+
+.flex{
+  display:flex
+}
+
+.hidden{
+  display:none
+}
+
+.h-6{
+  height:1.5rem
+}
+
+.w-20{
+  width:5rem
+}
+
+.w-6{
+  width:1.5rem
+}
+
+.items-center{
+  align-items:center
+}
+
+.justify-between{
+  justify-content:space-between
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse:0;
+  margin-right:calc(1rem * var(--tw-space-x-reverse));
+  margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))
+}
+
+.bg-gray-800{
+  --tw-bg-opacity:1;
+  background-color:rgb(31 41 55 / var(--tw-bg-opacity))
+}
+
+.bg-transparent{
+  background-color:transparent
 }
 
 .p-4{
   padding:1rem
 }
 
-.font-body{
-  font-family:Nunito
+.px-4{
+  padding-left:1rem;
+  padding-right:1rem
 }
 
-.text-2xl{
-  font-size:1.5rem;
-  line-height:2rem
+.pb-1{
+  padding-bottom:0.25rem
+}
+
+.pt-4{
+  padding-top:1rem
+}
+
+.pt-0{
+  padding-top:0px
+}
+
+.text-center{
+  text-align:center
+}
+
+.font-body{
+  font-family:Nunito
 }
 
 .text-xl{
@@ -13881,33 +13977,73 @@ video {
   line-height:1.75rem
 }
 
-.text-4xl{
-  font-size:2.25rem;
-  line-height:2.5rem
+.font-semibold{
+  font-weight:600
 }
 
-.font-bold{
-  font-weight:700
-}
-
-.text-pink-400{
+.text-white{
   --tw-text-opacity:1;
-  color:rgb(244 114 182 / var(--tw-text-opacity))
+  color:rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-slate-800{
+  --tw-text-opacity:1;
+  color:rgb(30 41 59 / var(--tw-text-opacity))
+}
+
+.transition{
+  transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration:150ms
+}
+
+.duration-300{
+  transition-duration:300ms
+}
+
+.ease-in-out{
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 body {
   margin: 0;
-  background-color: #f9ea8f;
-  background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
-  /* background: linear-gradient(
-    to right,
-    #dbd5a4,
-    #649173 */
+  background: linear-gradient( to left,
+    #f9ea8f 0%, #aff1da 74%)
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.hover\:underline:hover{
+  text-decoration-line:underline
+}
+
+@media (min-width: 768px){
+  .md\:flex{
+    display:flex
+  }
+
+  .md\:hidden{
+    display:none
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:mx-36{
+    margin-left:9rem;
+    margin-right:9rem
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:mx-40{
+    margin-left:10rem;
+    margin-right:10rem
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
