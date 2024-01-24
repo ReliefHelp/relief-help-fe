@@ -50,7 +50,7 @@ const LandingPageNav = () => {
 
         {/* Responsive menu for smaller screens */}
         {menuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-800 p-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-800 p-4 ">
             <a
               href="#"
               className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"

@@ -8,7 +8,7 @@ export default function Carousel() {
   return (
     <>
       <TECarousel showControls showIndicators ride="carousel" className="z-1">
-        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] rounded-lg">
           <TECarouselItem
             itemID={1}
             className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[1200ms] ease-in-out motion-reduce:transition-none"
@@ -19,10 +19,8 @@ export default function Carousel() {
               alt="..."
             />
             <div className="absolute inset-x-[15%] bottom-5 py-5 text-center text-white md:block">
-              <h5 className="text-xl">WELCOME TO RELIEF HELP</h5>
-              <p>
-                Some representative placeholder content for the first slide.
-              </p>
+              <h5 className="text-xl">Free from Earthquakes</h5>
+              
             </div>
           </TECarouselItem>
           <TECarouselItem
@@ -35,10 +33,7 @@ export default function Carousel() {
               alt="..."
             />
             <div className="absolute inset-x-[15%] bottom-5  py-5 text-center text-white md:block">
-              <h5 className="text-xl">Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
+              <h5 className="text-xl">Free from Land slides</h5>
             </div>
           </TECarouselItem>
           <TECarouselItem
@@ -51,10 +46,7 @@ export default function Carousel() {
               alt="..."
             />
             <div className="absolute inset-x-[15%] bottom-5 py-5 text-center text-white md:block">
-              <h5 className="text-xl">Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
+              <h5 className="text-xl">Safe Planting</h5>
             </div>
           </TECarouselItem>
         </div>
