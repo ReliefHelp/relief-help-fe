@@ -13,7 +13,7 @@ const LandingPageNav = () => {
       <div className="container-fluid mx-auto flex justify-between items-center">
         {/* Brandname */}
         <div className="text-white text-xl font-semibold d-flex">
-          <span className="my-auto px-4">RELIEF HELP</span>
+          <span className="my-auto pl-0">RELIEF HELP</span>
         </div>
 
         {/* Navbar links for larger screens */}
