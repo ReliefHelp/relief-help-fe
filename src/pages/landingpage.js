@@ -5,6 +5,8 @@ import FeatureCard from "../components/landing page/featureCard";
 import WelcomeText from "../components/landing page/welcomeText";
 import WhatIs from "../components/landing page/whatIs";
 import Users from "../components/landing page/who its for/users";
+import Features from "../components/Features";
+import FAQs from "../components/landing page/FAQs";
 
 function LandingPage() {
   return (
@@ -58,6 +60,26 @@ function LandingPage() {
             <Users />
           </div>
         </section>
+        <br></br>
+        <div className="d-none d-sm-block">
+          <br></br>
+        </div>
+
+        <Features />
+        <br></br>
+        <hr></hr>
+        <br></br>
+        <div className="d-none d-sm-block">
+          <h1 className="text-center text-3xl fw-bold">
+            Frequently Asked Questions
+          </h1>
+          <br></br>
+        </div>
+        <div className="d-block d-sm-none">
+          <h1 className="text-center text-3xl fw-bold">FAQs</h1>
+          <br></br>
+        </div>
+        <FAQs />
       </div>
     </>
   );
