@@ -7,6 +7,9 @@ import WhatIs from "../components/landing page/whatIs";
 import Users from "../components/landing page/who its for/users";
 import Features from "../components/Features";
 import FAQs from "../components/landing page/FAQs";
+import Team from "../components/landing page/Team";
+import TeamImg from "../../src/assets/images/reliefteam.jpeg"
+import Footer from "../components/landing page/Footer";
 
 function LandingPage() {
   return (
@@ -80,7 +83,20 @@ function LandingPage() {
           <br></br>
         </div>
         <FAQs />
+        <br></br>
+        <hr></hr>
+        <br></br>
+        <h1 className="text-center text-3xl text-gray-700 fw-bold">Team</h1>
+        <br></br>
+        <div className="text-center">
+          <img
+            className="img img-fluid max-w-2xl rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
+            src={TeamImg}
+          ></img>
+        </div>
+        <br></br>
       </div>
+      <Footer />
     </>
   );
 }
