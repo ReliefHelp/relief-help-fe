@@ -2,7 +2,7 @@
   "name": "relief-help",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://reliefhelp.github.io/relief-help-fe/",
+  "node": "18.18.2",
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@testing-library/jest-dom": "^5.17.0",

@@ -1,2 +1,4 @@
 {
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/3d787769-b4b1-4091-8749-4c912956284f/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/RELIEF",
+    "appService.deploySubpath": "src"
 }
