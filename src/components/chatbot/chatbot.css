@@ -1,0 +1,58 @@
+.body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    /* Add this line */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.input-message {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+}
+
+
+.grid-container {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        flex-direction: column;
+        height: 91vh;
+        /* Set the height to 100vh on mobile */
+    }
+
+    .image-column {
+        display: none;
+    }
+}
+
+img {
+    height: 80vh;
+}
+
+.image-column {
+    flex: 1;
+    order: 1;
+    height: 80vh;
+}
+
+.chatbot-column {
+    flex: 1;
+    order: 2;
+}
+
+.card {
+    padding: 2em;
+}
+
