@@ -34,7 +34,7 @@ const LandingPageNav = () => {
             href="#"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
-            Info
+            FAQs
           </a>
           <a href="#">
             <button className="btn btn-success">Login</button>
@@ -67,7 +67,7 @@ const LandingPageNav = () => {
               href="#"
               className="block text-white hover:underline pb-1 transition duration-300 ease-in-out"
             >
-              Info
+              FAQs
             </a>
             <a href="#">
               <button className="btn btn-success">Login</button>
