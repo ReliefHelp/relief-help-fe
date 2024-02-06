@@ -32,6 +32,12 @@ const LandingPageNav = () => {
             Contact
           </a>
           <a
+            href="/reliefhelper"
+            className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
+          >
+            Bot
+          </a>
+          <a
             href="/faqs"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
@@ -71,6 +77,12 @@ const LandingPageNav = () => {
               className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"
             >
               Contact
+            </a>
+            <a
+              href="/reliefhelper"
+              className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"
+            >
+              Bot
             </a>
             <a
               href="/faqs"
