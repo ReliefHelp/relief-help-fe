@@ -1,7 +1,5 @@
 import React from 'react'
-import { TECarousel, TECarouselItem } from "tw-elements-react";
-
-import "./assets/login styling/login.css";
+import "./assets/login styling/man.css";
 
 export default function Man() {
   return (

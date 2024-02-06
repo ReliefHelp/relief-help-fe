@@ -86,7 +86,7 @@ function ChatBot() {
       <LandingPageNav />
       <div className="grid-container">
         <div className="image-column">
-          <img src={image} alt="Your Image" />
+          <img className="chatbot-picture" src={image} alt="Your Image" />
         </div>
         <div className="chatbot-column">
           <MainContainer>

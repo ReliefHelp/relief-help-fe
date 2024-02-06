@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import ChatBot from "./components/chatbot/ChatBot.jsx"
-// import Login from "./components/login pages/Login.jsx";
-// import Register from "./components/login pages/Register.jsx";
+import ChatBot from "./components/chatbot/ChatBot.jsx"
+import Login from "./components/login pages/Login.jsx";
+import Register from "./components/login pages/Register.jsx";
 import LandingPage from "./pages/landingpage";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
           {/* Add more routes here if needed */}
         </Routes>
-        {/* <Routes>
+        <Routes>
           <Route path="/reliefhelper" element={<ChatBot />} />
         </Routes>
         <Routes>
@@ -21,7 +21,7 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/register" element={<Register />} />
-        </Routes> */}
+        </Routes>
       </div>
     </Router>
   );
