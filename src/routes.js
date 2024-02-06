@@ -1,19 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import ChatBot from "./components/chatbot/ChatBot.jsx"
-// import Login from "./components/login pages/Login.jsx";
-// import Register from "./components/login pages/Register.jsx";
-import LandingPage from "./pages/landingpage";
+import ChatBot from "./components/chatbot/ChatBot.jsx";
+import Login from "./components/login pages/Login.jsx";
+import Register from "./components/login pages/Register.jsx";
 
-function App() {
+function Routings() {
   return (
     <Router>
       <div className="App font-body">
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-
-          {/* Add more routes here if needed */}
-        </Routes>
-        {/* <Routes>
           <Route path="/reliefhelper" element={<ChatBot />} />
         </Routes>
         <Routes>
@@ -21,10 +15,10 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/register" element={<Register />} />
-        </Routes> */}
+        </Routes>
       </div>
     </Router>
   );
 }
 
-export default App;
+export default Routings;
