@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import "../../assets/login styling/login.css";
+import { Link } from "react-router-dom";
+
 
 const Login = () => {
   const userRef = useRef();
@@ -81,7 +83,7 @@ const Login = () => {
               <br />
               <span className="line">
                 {/* put router link here */}
-                <a href="#">Sign Up</a>
+                <Link to="/register">Sign Up</Link>
               </span>
             </p>
           </section>

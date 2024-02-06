@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import "../../assets/login styling/login.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const userRef = useRef();
@@ -96,15 +97,13 @@ const Register = () => {
                 required
               />
 
-              
-
               <button>Register</button>
             </form>
             <p>
               Already have an account?
               <br />
               <span className="line">
-                <a href="">Sign In</a>
+                <Link to="/login">Sign In</Link>
               </span>
             </p>
           </section>

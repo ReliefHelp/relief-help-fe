@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const LandingPageNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,59 +20,67 @@ const LandingPageNav = () => {
         {/* Navbar links for larger screens */}
         <div className="hidden md:flex space-x-4">
           <a
-            href="#"
+            href="/about"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
             About Us
           </a>
           <a
-            href="#"
+            href="/contact"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
             Contact
           </a>
           <a
-            href="#"
+            href="/faqs"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
             FAQs
           </a>
-          <a href="#">
+          <Link to="/login">
             <button className="btn btn-success">Login</button>
-          </a>
+          </Link>
         </div>
 
         {/* Toggle menu icon for smaller screens */}
         <div className="md:hidden">
-          <button onClick={toggleMenu}>
+          <button
+            aria-haspopup="true"
+            aria-controls="mobile-menu"
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
+          >
             <Bars3BottomRightIcon className="h-6 w-6 text-white" />
           </button>
         </div>
 
         {/* Responsive menu for smaller screens */}
         {menuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-800 p-4 ">
+          <div
+            id="mobile-menu"
+            className="md:hidden absolute top-full left-0 right-0 bg-gray-800 p-4 "
+          >
             <a
-              href="#"
+              href="/about"
               className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"
             >
               About Us
             </a>
             <a
-              href="#"
+              href="/contact"
               className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"
             >
               Contact
             </a>
             <a
-              href="#"
+              href="/faqs"
               className="block text-white hover:underline pb-1 transition duration-300 ease-in-out"
             >
               FAQs
             </a>
-            <a href="#">
+            <Link to="/login">
               <button className="btn btn-success">Login</button>
-            </a>
+            </Link>
           </div>
         )}
       </div>
