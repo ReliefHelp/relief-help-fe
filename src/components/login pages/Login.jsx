@@ -38,61 +38,61 @@ const Login = () => {
   return (
     <>
       <LandingPageNav />
-          <div className="grid-container">
-      <div className="image-section">{/* Your image content here */}</div>
-      <div className="form-section">
-        {success ? (
-          <section>
-            <h1>You are logged in!</h1>
-            <br />
-            <p>
-              <a href="#">Go to Home</a>
-            </p>
-          </section>
-        ) : (
-          <section>
-            <p
-              ref={errRef}
-              className={errMsg ? "errmsg" : "offscreen"}
-              aria-live="assertive"
-            >
-              {errMsg}
-            </p>
-            <h1>ReliefHelp</h1>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                id="username"
-                ref={userRef}
-                autoComplete="off"
-                placeholder="Username"
-                onChange={(e) => setUser(e.target.value)}
-                value={user}
-                required
-              />
-
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                onChange={(e) => setPwd(e.target.value)}
-                value={pwd}
-                required
-              />
-              <button>Sign In</button>
-            </form>
-            <p>
-              Need an Account?
+      <div className="grid-container">
+        <div className="image-section">{/* Your image content here */}</div>
+        <div className="form-section">
+          {success ? (
+            <section className="login-section">
+              <h1>You are logged in!</h1>
               <br />
-              <span className="line">
-                {/* put router link here */}
-                <Link to="/register">Sign Up</Link>
-              </span>
-            </p>
-          </section>
-        )}
+              <p>
+                <a href="#">Go to Home</a>
+              </p>
+            </section>
+          ) : (
+            <section className="login-section">
+              <p
+                ref={errRef}
+                className={errMsg ? "errmsg" : "offscreen"}
+                aria-live="assertive"
+              >
+                {errMsg}
+              </p>
+              <h1>ReliefHelp</h1>
+              <form className="login-form" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  id="username"
+                  ref={userRef}
+                  autoComplete="off"
+                  placeholder="Username"
+                  onChange={(e) => setUser(e.target.value)}
+                  value={user}
+                  required
+                />
+
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={pwd}
+                  required
+                />
+                <button className="signup-btn">Sign In</button>
+              </form>
+              <p>
+                Need an Account?
+                <br />
+                <span className="line">
+                  {/* put router link here */}
+                  <Link to="/register">Sign Up</Link>
+                </span>
+              </p>
+            </section>
+          )}
+        </div>
       </div>
-    </div>
     </>
   );
 };

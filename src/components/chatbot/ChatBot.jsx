@@ -84,9 +84,9 @@ function ChatBot() {
   return (
     <div className="ChatBot">
       <LandingPageNav />
-      <div className="grid-container">
+      <div className="grid-container" style={{ height:" calc(100vh - 140px) " }}>
         <div className="image-column">
-          <img src={image} alt="Your Image" />
+          <img className="chatbot-picture" src={image} alt="Your Image" />
         </div>
         <div className="chatbot-column">
           <MainContainer>

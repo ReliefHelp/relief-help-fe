@@ -59,7 +59,7 @@ const Register = () => {
               {errMsg}
             </p>
             <h1>ReliefHelp!</h1>
-            <form onSubmit={handleRegisterSubmit}>
+            <form className="login-form" onSubmit={handleRegisterSubmit}>
               <input
                 type="text"
                 id="username"
