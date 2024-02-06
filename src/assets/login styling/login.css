@@ -86,7 +86,7 @@ textarea {
 
 button {
     width: 100%;
-    height: auto;
+    height: 5vh auto;
     padding: 1rem;
     margin-top: 1.5rem;
     border: none;
@@ -142,5 +142,12 @@ a:hover {
 
     section {
         min-height: auto;
+    }
+        input,
+        textarea{
+            width: 120%;
+        }
+    .button{
+        width: 10px;
     }
 }

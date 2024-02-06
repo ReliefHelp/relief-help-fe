@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import "../../assets/login styling/login.css";
 import { Link } from "react-router-dom";
+import LandingPageNav from "../landing page/navbar";
 
 
 const Login = () => {
@@ -35,7 +36,9 @@ const Login = () => {
   };
 
   return (
-    <div className="grid-container">
+    <>
+      <LandingPageNav />
+          <div className="grid-container">
       <div className="image-section">{/* Your image content here */}</div>
       <div className="form-section">
         {success ? (
@@ -90,6 +93,7 @@ const Login = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

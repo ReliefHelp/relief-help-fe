@@ -89,9 +89,9 @@ function LandingPage() {
         <h1 className="text-center text-3xl text-gray-700 fw-bold">Team</h1>
         <br></br>
         <div className="text-center">
-          <img
+          <img alt="Image of Relief Help Team"
             className="img img-fluid max-w-2xl rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
-            src={TeamImg}
+            src={TeamImg} 
           ></img>
         </div>
         <br></br>
