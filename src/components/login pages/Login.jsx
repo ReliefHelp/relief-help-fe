@@ -46,7 +46,7 @@ const Login = () => {
               <h1>You are logged in!</h1>
               <br />
               <p>
-                <a href="#">Go to Home</a>
+                <Link to="/">Go to Home</Link>
               </p>
             </section>
           ) : (
@@ -58,7 +58,9 @@ const Login = () => {
               >
                 {errMsg}
               </p>
-              <h1>ReliefHelp</h1>
+              <h1 className="text-success-700 text-4xl text-capitalize relief-h2">
+                SignIn
+              </h1>
               <form className="login-form" onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -79,14 +81,15 @@ const Login = () => {
                   value={pwd}
                   required
                 />
-                <button className="signup-btn">Sign In</button>
+                <button className="signup-btn">Proceed</button>
               </form>
               <p>
-                Need an Account?
-                <br />
+                Need an Account? 
                 <span className="line">
                   {/* put router link here */}
-                  <Link to="/register">Sign Up</Link>
+                  <h1 className="relief-h1">
+                    <Link to="/register">{" "} Sign Up</Link>
+                  </h1>
                 </span>
               </p>
             </section>
