@@ -3,6 +3,7 @@ import ChatBot from "./components/chatbot/ChatBot.jsx"
 import Login from "./components/login pages/Login.jsx";
 import Register from "./components/login pages/Register.jsx";
 import LandingPage from "./pages/landingpage";
+import Status from "./components/status page/Status.jsx";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/reliefhelper" element={<ChatBot />} />
+        </Routes>
+        <Routes>
+          <Route path="/status" element={<Status />} />
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />} />
