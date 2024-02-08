@@ -22,31 +22,12 @@
     .first-component {
         width: 100%;
         max-width: 400px;
-    } 
-    .disaster-table {
-        width: 90px;
-        max-width: 90%;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .first-component {
         width: 100%;
         max-width: 300px;
-    }
-   
-}
-
-.table-container {
-    overflow-x: auto;
-}
-
-.responsive-table {
-    /* Table styles */
-}
-
-@media (max-width: 768px) {
-    .responsive-table {
-        /* Styles for smaller screens */
     }
 }

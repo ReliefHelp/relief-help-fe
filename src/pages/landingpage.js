@@ -29,7 +29,7 @@ function LandingPage() {
             <br></br>
             <div className="text-center d-block d-md-none">
               <Link
-                to="/status"
+                to="status"
                 class="inline-flex items-center justify-center h-14 px-10 py-0 text-lg font-semibold text-center text-gray-200 no-underline align-middle transition-all duration-300 ease-in-out bg-gray-800 border-2 border-gray-600 border-solid rounded-full cursor-pointer select-none hover:text-white hover:border-white focus:shadow-xs focus:no-underline hover:bg-green-800"
               >
                 Get Started{" "}
