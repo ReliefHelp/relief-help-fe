@@ -1,0 +1,52 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 80%;
+    min-height: 100vh;
+}
+
+.first-component.active {
+    transform: translateY(-100%);
+}
+
+.second-component {
+    transition: transform 0.5s;
+    transform: translateY(100%);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .first-component {
+        width: 100%;
+        max-width: 400px;
+    } 
+    .disaster-table {
+        width: 90px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .first-component {
+        width: 100%;
+        max-width: 300px;
+    }
+   
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.responsive-table {
+    /* Table styles */
+}
+
+@media (max-width: 768px) {
+    .responsive-table {
+        /* Styles for smaller screens */
+    }
+}
