@@ -84,24 +84,14 @@ const LandingPageNav = () => {
           >
             FAQs
           </a>
+          <Link to="/login">
+            <button className="btn btn-success">Login</button>
+          </Link>
           <button>
             <Sidebar />
           </button>
 
-          {usernameFetched ? (
-            loggedIn ? (
-              <div className="flex items-center">
-                <button className="btn btn-success" onClick={handleLogout}>
-                  Logout
-                </button>
-                <span className="text-white ml-2">{`(${username})`}</span>
-              </div>
-            ) : (
-              <Link to="/login">
-                <button className="btn btn-success">Login</button>
-              </Link>
-            )
-          ) : null}
+          
         </div>
 
         {/* Toggle menu icon for smaller screens */}
