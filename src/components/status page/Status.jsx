@@ -157,7 +157,7 @@ function SecondComponent() {
         <div style={titleStyle}>
           Disaster Probability Details
         </div>
-        <table style={tableStyle}>
+        <table className='table-data' style={tableStyle}>
           <thead>
             <tr style={tableHeaderStyle}>
               <th style={tableHeadStyle}>Disaster Type</th>

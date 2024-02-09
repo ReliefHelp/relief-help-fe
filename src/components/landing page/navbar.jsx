@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import Sidebar from "./SideBar";
 
 const LandingPageNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,14 +14,16 @@ const LandingPageNav = () => {
     <nav className="bg-gray-800 p-4 relative z-10">
       <div className="container-fluid mx-auto flex justify-between items-center">
         {/* Brandname */}
-        <div className="text-white text-xl font-semibold d-flex">
-          <span className="my-auto pl-0">RELIEF HELP</span>
-        </div>
+        <Link to="/">
+          <div className="text-white text-xl font-semibold d-flex">
+            <span className="my-auto pl-0">RELIEF HELP</span>
+          </div>
+        </Link>
 
         {/* Navbar links for larger screens */}
         <div className="hidden md:flex space-x-4">
           <a
-            href="/about"
+            href="/team"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
             About Us
@@ -38,11 +41,21 @@ const LandingPageNav = () => {
             Bot
           </a>
           <a
+            href="/sidebar"
+            className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
+          >
+            Account
+          </a>
+          <a
             href="/faqs"
             className="text-white hover:underline mt-2 transition duration-300 ease-in-out"
           >
             FAQs
           </a>
+          <button>
+            <Sidebar />
+          </button>
+
           <Link to="/login">
             <button className="btn btn-success">Login</button>
           </Link>
