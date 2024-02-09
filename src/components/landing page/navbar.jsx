@@ -14,7 +14,7 @@ const LandingPageNav = () => {
     const fetchUsername = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/auth/api/current-user"
+          "http://reliefhelp.onrender.com/auth/api/current-user"
         );
         setUsername(response.data.username);
         setUsernameFetched(true);
@@ -33,7 +33,7 @@ const LandingPageNav = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://127.0.0.1:8000/auth/logout/");
+      await axios.post("https://reliefhelp.onrender.com/auth/logout/");
       setLoggedIn(false);
       setUsername("");
       setUsernameFetched(false);

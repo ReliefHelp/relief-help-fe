@@ -4,7 +4,7 @@ export default function EarthquakeListComponent() {
   const [earthquakeData, setEarthquakeData] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/location/api/earthquake-data/")
+    fetch("https://reliefhelp.onrender.com/location/api/earthquake-data/")
       .then((response) => response.json())
       .then((data) => {
         setEarthquakeData(data);
