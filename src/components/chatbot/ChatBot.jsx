@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LandingPageNav from "../landing page/navbar";
 import "./chatbot.css";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
@@ -23,6 +23,15 @@ function ChatBot() {
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
+  useEffect(() => {
+    // Get the navbar element
+    const navbar = document.querySelector(".navbarr");
+
+    // Set the navbar height in state
+    setNavbarHeight(navbar.offsetHeight);
+  }, []);
 
   const handleSend = async (message) => {
     const newMessage = {
@@ -83,10 +92,17 @@ function ChatBot() {
 
   return (
     <div className="ChatBot">
-      <LandingPageNav />
-      <div className="grid-container">
+      <span className="navbarr">
+        <LandingPageNav />
+      </span>
+      <div
+        className="grid-container"
+        style={{
+          height: `calc(100vh - ${navbarHeight}px`,
+        }}
+      >
         <div className="image-column">
-          <img src={image} alt="Your Image" />
+          <img className="chatbot-picture" src={image} style={{height:"100%"}} alt="Your Image" />
         </div>
         <div className="chatbot-column">
           <MainContainer>

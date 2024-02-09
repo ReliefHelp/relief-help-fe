@@ -1,7 +1,11 @@
 import React from "react";
+import LandingPageNav from "./navbar";
 
 export default function Team() {
   return (
+      <>
+        <LandingPageNav />
+      
     <div className="row py-5">
       <div className="col-md-3 pt-0 mt-0 pb-5 pb-md-0">
         <div className="text-center">
@@ -48,5 +52,6 @@ export default function Team() {
         </div>
       </div>
     </div>
+    </>
   );
 }
