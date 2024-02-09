@@ -4,13 +4,15 @@ export default function EarthquakeListComponent() {
   const [earthquakeData, setEarthquakeData] = useState([]);
 
   useEffect(() => {
-    fetch("https://reliefhelp.onrender.com/location/api/earthquake-data/")
+    fetch("https://reliefhelp.onrender.com/location/api/earthquake-data")
       .then((response) => response.json())
       .then((data) => {
+        console.log("Fetched earthquake data:", data);
         setEarthquakeData(data);
       })
       .catch((error) => {
         console.log("Error fetching earthquake data:", error);
+        setEarthquakeData([]); // Set empty array in case of error
       });
   }, []);
 
@@ -74,13 +76,21 @@ export default function EarthquakeListComponent() {
             </tr>
           </thead>
           <tbody>
-            {earthquakeData.map((quake, index) => (
-              <tr key={index} style={tableRowStyle}>
-                <td style={tableCellStyle}>{quake.place}</td>
-                <td style={tableCellStyle}>{quake.date}</td>
-                <td style={tableCellStyle}>{quake.magnitude}</td>
+            {Array.isArray(earthquakeData) && earthquakeData.length > 0 ? (
+              earthquakeData.map((quake, index) => (
+                <tr key={index} style={tableRowStyle}>
+                  <td style={tableCellStyle}>{quake.place}</td>
+                  <td style={tableCellStyle}>{quake.date}</td>
+                  <td style={tableCellStyle}>{quake.magnitude}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3" style={tableCellStyle}>
+                  No earthquake data available
+                </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>

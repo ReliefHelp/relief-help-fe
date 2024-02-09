@@ -428,7 +428,7 @@ function EarthquakeComponent({ earthquakeData }) {
           </table>
         </div>
       </div>
-      <EarthquakeListComponent /> {/* Include the new component here */}
+      <EarthquakeListComponent /> 
     </>
   );
 }
