@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    .toggleButton {
+        display: block;
+        /* Show toggle button on smaller screens */
+        /* Add other styles as necessary */
+    }
+}
