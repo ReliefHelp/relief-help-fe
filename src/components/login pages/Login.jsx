@@ -25,7 +25,7 @@ const Login = () => {
     const fetchUsername = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/auth/api/current-user"
+          "https://reliefhelp.onrender.com/auth/api/current-user"
         );
         setUsername(response.data.username);
       } catch (error) {
@@ -42,7 +42,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/auth/login/", {
+      const response = await axios.post("https://reliefhelp.onrender.com/auth/login/", {
         email: email,
         password: pwd,
       });

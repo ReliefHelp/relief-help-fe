@@ -12,7 +12,7 @@ export default function App() {
 
   useEffect(() => {
     // Fetch the disasters data from the API
-    fetch("http://127.0.0.1:8000/location/track-location/")
+    fetch("https://reliefhelp.onrender.com/location/track-location/")
       .then((response) => response.json())
       .then((data) => {
         // Check if data is an array or a single object
@@ -28,7 +28,7 @@ export default function App() {
       });
 
     // Fetch the weather data from the API
-    fetch("http://127.0.0.1:8000/location/api/user_weather_location/")
+    fetch("https://reliefhelp.onrender.com/location/api/user_weather_location/")
       .then((response) => response.json())
       .then((data) => {
         setWeatherData(data.weather_data);
@@ -38,7 +38,7 @@ export default function App() {
       });
 
     // Fetch the earthquake data from the API
-    fetch("http://127.0.0.1:8000/location/api/earthquake-data_specific/")
+    fetch("https://reliefhelp.onrender.com/location/api/earthquake-data_specific/")
       .then((response) => response.json())
       .then((data) => {
         setEarthquakeData(data);

@@ -16,7 +16,7 @@ const Register = () => {
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/auth/register/", {
+      const response = await axios.post("https://reliefhelp.onrender.com/auth/register/", {
         username: user,
         email: email,
         password: pwd,
