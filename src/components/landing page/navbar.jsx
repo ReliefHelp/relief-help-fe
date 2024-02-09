@@ -1,13 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import Sidebar from "./SideBar";
+import axios from "axios";
 
 const LandingPageNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const [usernameFetched, setUsernameFetched] = useState(false);
+
+  useEffect(() => {
+    const fetchUsername = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8000/auth/api/current-user"
+        );
+        setUsername(response.data.username);
+        setUsernameFetched(true);
+        setLoggedIn(true);
+      } catch (error) {
+        console.error("Error retrieving username:", error);
+      }
+    };
+
+    fetchUsername();
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await axios.post("http://127.0.0.1:8000/auth/logout/");
+      setLoggedIn(false);
+      setUsername("");
+      setUsernameFetched(false);
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
   };
 
   return (
@@ -56,9 +88,20 @@ const LandingPageNav = () => {
             <Sidebar />
           </button>
 
-          <Link to="/login">
-            <button className="btn btn-success">Login</button>
-          </Link>
+          {usernameFetched ? (
+            loggedIn ? (
+              <div className="flex items-center">
+                <button className="btn btn-success" onClick={handleLogout}>
+                  Logout
+                </button>
+                <span className="text-white ml-2">{`(${username})`}</span>
+              </div>
+            ) : (
+              <Link to="/login">
+                <button className="btn btn-success">Login</button>
+              </Link>
+            )
+          ) : null}
         </div>
 
         {/* Toggle menu icon for smaller screens */}
@@ -98,14 +141,31 @@ const LandingPageNav = () => {
               Bot
             </a>
             <a
+              href="/sidebar"
+              className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"
+            >
+              Account
+            </a>
+            <a
               href="/faqs"
-              className="block text-white hover:underline pb-1 transition duration-300 ease-in-out"
+              className="block text-white mb-2 hover:underline pb-1 transition duration-300 ease-in-out"
             >
               FAQs
             </a>
-            <Link to="/login">
-              <button className="btn btn-success">Login</button>
-            </Link>
+            {usernameFetched ? (
+              loggedIn ? (
+                <div className="flex items-center">
+                  <button className="btn btn-success" onClick={handleLogout}>
+                    Logout
+                  </button>
+                  <span className="text-white ml-2">{`(${username})`}</span>
+                </div>
+              ) : (
+                <Link to="/login">
+                  <button className="btn btn-success">Login</button>
+                </Link>
+              )
+            ) : null}
           </div>
         )}
       </div>
