@@ -39,7 +39,7 @@ const Register = () => {
               <h1>Registration Successful!</h1>
               <br />
               <p>
-                <Link to="/">Go to Home</Link>
+                <h2>Please go to your MailBox and Click Received Link To activate your account</h2>
               </p>
             </section>
           ) : (
