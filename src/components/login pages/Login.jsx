@@ -1,35 +1,64 @@
 import { useRef, useState, useEffect } from "react";
-import "../../assets/login styling/login.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import LandingPageNav from "../landing page/navbar";
 
-
 const Login = () => {
-  const userRef = useRef();
+  const emailRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    userRef.current.focus();
+    emailRef.current.focus();
   }, []);
 
   useEffect(() => {
     setErrMsg("");
-  }, [user, pwd]);
+  }, [email, pwd]);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const fetchUsername = async () => {
+      try {
+        const response = await axios.get(
+          "https://reliefhelp.onrender.com/auth/api/current-user"
+        );
+        setUsername(response.data.username);
+      } catch (error) {
+        console.error("Error retrieving username:", error);
+      }
+    };
+
+    if (success) {
+      fetchUsername();
+    }
+  }, [success]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simulating login success
-    if (user === "example" && pwd === "password") {
-      setUser("");
-      setPwd("");
-      setSuccess(true);
-    } else {
+    try {
+      const response = await axios.post("https://reliefhelp.onrender.com/auth/login/", {
+        email: email,
+        password: pwd,
+      });
+
+      // Check the response status and handle accordingly
+      if (response.status === 200) {
+        setEmail("");
+        setPwd("");
+        setSuccess(true);
+        setUsername(response.data.username); // Add this line to set the username immediately
+      } else {
+        setErrMsg("Login Failed");
+        errRef.current.focus();
+      }
+    } catch (error) {
+      // Handle error response
       setErrMsg("Login Failed");
       errRef.current.focus();
     }
@@ -43,7 +72,7 @@ const Login = () => {
         <div className="form-section">
           {success ? (
             <section className="login-section">
-              <h1>You are logged in!</h1>
+              <h1>You are logged in, {username}!</h1>
               <br />
               <p>
                 <Link to="/">Go to Home</Link>
@@ -63,13 +92,13 @@ const Login = () => {
               </h1>
               <form className="login-form" onSubmit={handleSubmit}>
                 <input
-                  type="text"
-                  id="username"
-                  ref={userRef}
+                  type="email"
+                  id="email"
+                  ref={emailRef}
                   autoComplete="off"
-                  placeholder="Username"
-                  onChange={(e) => setUser(e.target.value)}
-                  value={user}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   required
                 />
 
@@ -84,11 +113,10 @@ const Login = () => {
                 <button className="signup-btn">Proceed</button>
               </form>
               <p>
-                Need an Account? 
+                Need an Account?{" "}
                 <span className="line">
-                  {/* put router link here */}
                   <h1 className="relief-h1">
-                    <Link to="/register">{" "} Sign Up</Link>
+                    <Link to="/register"> Sign Up</Link>
                   </h1>
                 </span>
               </p>

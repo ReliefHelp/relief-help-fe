@@ -1,12 +1,11 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
+import axios from "axios";
 import "../../assets/login styling/login.css";
 import { Link } from "react-router-dom";
 import LandingPageNav from "../landing page/navbar";
 
 const Register = () => {
   const userRef = useRef();
-  const errRef = useRef();
-
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [confirmPwd, setConfirmPwd] = useState("");
@@ -14,27 +13,18 @@ const Register = () => {
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, pwd, confirmPwd, email]);
-
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-
-    // Simulating registration success
-    if (user && pwd && pwd === confirmPwd && email) {
-      setUser("");
-      setPwd("");
-      setConfirmPwd("");
-      setEmail("");
+    try {
+      const response = await axios.post("https://reliefhelp.onrender.com/auth/register/", {
+        username: user,
+        email: email,
+        password: pwd,
+        confirm_password: confirmPwd,
+      });
       setSuccess(true);
-    } else {
+    } catch (error) {
       setErrMsg("Registration Failed");
-      errRef.current.focus();
     }
   };
 
@@ -55,7 +45,6 @@ const Register = () => {
           ) : (
             <section className="login-section">
               <p
-                ref={errRef}
                 className={errMsg ? "errmsg" : "offscreen"}
                 aria-live="assertive"
               >
@@ -83,7 +72,6 @@ const Register = () => {
                   value={email}
                   required
                 />
-
                 <input
                   type="password"
                   id="password"
@@ -92,7 +80,6 @@ const Register = () => {
                   value={pwd}
                   required
                 />
-
                 <input
                   type="password"
                   id="confirmPassword"
@@ -101,7 +88,6 @@ const Register = () => {
                   value={confirmPwd}
                   required
                 />
-
                 <button className="signup-btn">Register</button>
               </form>
               <p>
