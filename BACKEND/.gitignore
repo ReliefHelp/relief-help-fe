@@ -1,0 +1,50 @@
+# Django project files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+build/
+media/
+
+# Virtual environment
+venv/
+env/
+
+# Development server
+*.sqlite3
+*.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Static files
+staticfiles/
+static/
+
+# Log files
+*.log
+
+# Compiled Python files
+*.pyc
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor/IDE files
+*.swp
+*~.nfs*
+*.bak
+*.tmp
+
+# Ignore sensitive or environment-specific information
+.env
